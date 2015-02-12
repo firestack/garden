@@ -1,0 +1,17 @@
+.full{
+	height: 100%;
+	width: 100%;
+}
+
+.chatframe{
+	height: 100%;
+	width: 100%;
+	frameborder: 1;
+	float:left;
+	position: relative;
+	display:inline-block;
+}
+
+.vertical_align{
+	display:inline;
+}
