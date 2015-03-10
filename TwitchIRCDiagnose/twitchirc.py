@@ -14,9 +14,8 @@ irc.send("NICK {}\r\n".format(NICK))
 irc.send("JOIN #{}\r\n".format(NICK))
 
 irc.send("CAP REQ:twitch.tv/commands")
-while True:
-	print irc.recv(4096)
+filedec = irc.makefile()
+filedec.
 
-irc.close()
+print "exited file"
 
-k = input()
