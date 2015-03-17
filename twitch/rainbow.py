@@ -5,9 +5,29 @@ import threading
 from sys import argv, path 
 import os
 
-path.append(os.path.abspath("C:\Users\levi\Source/"))
+path.append(os.path.abspath("C:/Users/levi/Source/"))
 
 from garden.twitchtools.color import colors as color
+
+
+channel_macros = {
+	"snarfresub":{
+		"channel":"snarfybobo", 
+		"message":".me snarfHype THANK YOU FOR YOUR CONTINUED BOBO PATRONAGE!! snarfHype"
+		},	
+	"snarfsub":{
+		"channel":"snarfybobo",
+		"message":".me snarfHype snarfCat WELCOME TO THE OBOBO BROS snarfBear snarfHype"
+	},
+	"daisyhi":{
+		"channel":"daisy8789",
+		"message":".me HI DAISY, HAVE A RAINBOW!!"
+	},
+	"ratshi":{
+		"channel":"rats7eli",
+		"message":".me snarfBoo Hi rats"
+	}
+}
 
 def ping_return(socket_obj,print_all=False):
 	print("Print all: ", print_all)
@@ -30,20 +50,30 @@ def get_hsv(hexrgb):
 
 def setup_rainbow_words():
 	# Rainbow words
-	channel = raw_input("What channel? : ")
+	command = raw_input("Command: ")
+	if command in channel_macros:
+		return (channel_macros[command]["channel"], [channel_macros[command]["message"]+ ("." if number % 2 == 0 else "") for number in range(len(color.colors))])
+	else:
+		channel = command
+
 	words = raw_input("Please input {} words: ".format(len(color.colors))).strip()
 
 	#rainbow word
 	if ((len(words.split(' ')) == 1 and words is not '') or (words[0] == "$")):
+		if words[1] == '$' and words[2:] in channel_macros:
+			return (channel, [channel_macros[words[2:]]["message"] + ("." if number % 2 == 0 else "") for number in range(len(color.colors))])
+			
+
 		words = [ ".me "+ words[1:] + ("." if number % 2 == 0 else "") for number in range(len(color.colors))]
 	#rainbow words<
 	else:
-		words = words.split(' ')
-		words = [".me "+i for i in words]
+		words = [".me "+i for i in words.split(' ')]
 
 	return (channel, words)
 
-def rainbow_loop(length_mod = 1, cwPair = (None, None), wait_amount = 0.18, offset = 0):
+def rainbow_loop(length_mod = 1, cwPair = (None, None), wait_amount = 0.18, offset = 0, irc = None):
+	colors = color.color_hex
+	colors.sort(key=lambda x: get_hsv(x[1]))
 	length_mod = len(color.colors) / length_mod	
 	wait_time = wait_amount
 	channel, words = setup_rainbow_words() if cwPair[0] is None else cwPair
@@ -93,39 +123,44 @@ def talk_loop(irc):
 	while True:
 		msg = raw_input(">>")
 		irc.sendall("PRIVMSG #{} :{}\r\n".format(channel, msg))
-#Sort
-#channel, words = setup_rainbow_words(	)
-colors = color.color_hex
-colors.sort(key=lambda x: get_hsv(x[1]))
-#colors = color.color_hex
-NICKNAME = "bomb_mask"#put your nickname here please
-OAUTH_KEY = "oauth:"#put your oauth key here please
-
-twitch_host = "irc.twitch.tv"
-twitch_port = 6667
 
 
+def normal_operation():	
+	#Sort
+	#channel, words = setup_rainbow_words(	)
+	colors = color.color_hex
+	colors.sort(key=lambda x: get_hsv(x[1]))
+	#colors = color.color_hex
+	NICKNAME = "bomb_mask"#put your nickname here please
+	OAUTH_KEY = "oauth:"#put your oauth key here please
 
+	twitch_host = "irc.twitch.tv"
+	twitch_port = 6667
 
+	#Join IRC
+	irc = socket.socket()
+	#print "Joining {} as {}.\n".format(channel,NICKNAME)
+	irc.connect((twitch_host,twitch_port))
 
-#Join IRC
-irc = socket.socket()
-#print "Joining {} as {}.\n".format(channel,NICKNAME)
-irc.connect((twitch_host,twitch_port))
+	printer = threading.Thread(target=ping_return, args=(irc,True))
+	printer.daemon = True
+	printer.start()
 
-printer = threading.Thread(target=ping_return, args=(irc,True))
-printer.daemon = True
-printer.start()
+	irc.sendall('PASS {}\r\n'.format(OAUTH_KEY))
+	irc.sendall('NICK {}\r\n'.format(NICKNAME))
+	#irc.sendall('JOIN #{}\r\n'.format(channel))
 
-irc.sendall('PASS {}\r\n'.format(OAUTH_KEY))
-irc.sendall('NICK {}\r\n'.format(NICKNAME))
-#irc.sendall('JOIN #{}\r\n'.format(channel))
+	rainbow_loop(15,wait_amount=0.026, irc = irc)
+	#rainbow_change_color(irc,45 )
+	#quoter(irc, 65, "snarfybobo")
 
-rainbow_loop(7)
-#rainbow_change_color(irc,45 )
-#quoter(irc, 65, "snarfybobo")
+	sleep(2)
+	irc.close()
 
-irc.close()
+if __name__ == '__main__':
+	#try:
+	normal_operation()
 
-
-
+	#finally:
+	print "Program exit."
+	raw_input("Press enter to exit...")

@@ -40,9 +40,9 @@ if spam:
                         toSend = 'PRIVMSG #{} :{}\r\n'.format(channel, (data+' ')*total_i*spam)
                         print "message",i
                         print toSend
-                        sleep(1.21)
+                        #sleep(1.21)
                         #if mod
-                        #sleep(0.01)
+                        sleep(0.01)
                         irc.sendall(toSend)
 else:
         for amountSize in range(amount):
