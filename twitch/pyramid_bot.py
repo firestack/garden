@@ -1,6 +1,8 @@
 import os
 import socket
 from time import sleep
+from garden.twitchtools import login
+
 spam = input("Bool : ")
 print type(spam)
 amount = input("(int)amount : ")
@@ -10,8 +12,9 @@ size = input("(int)size : ")
 data = raw_input("(str)String : ")
 channel = raw_input("(str)channel : ")
 
-t_nick = "bomb_mask"
-t_oauth = "oauth:"
+user = login.Profile("bomb_mask")
+t_nick = user.name
+t_oauth = user.oauth
 
 twitch_host = "irc.twitch.tv"
 twitch_port = 6667
