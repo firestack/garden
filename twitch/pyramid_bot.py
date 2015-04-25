@@ -1,7 +1,7 @@
 import os
 import socket
 from time import sleep
-from garden.twitchtools import login
+from twitchtools import login
 
 spam = input("Bool : ")
 print type(spam)
@@ -14,7 +14,7 @@ channel = raw_input("(str)channel : ")
 
 user = login.Profile("bomb_mask")
 t_nick = user.name
-t_oauth = user.oauth
+t_oauth = user.password
 
 twitch_host = "irc.twitch.tv"
 twitch_port = 6667
@@ -23,7 +23,7 @@ print "Joining {} as {}.\n".format(channel,t_nick)
 
 irc = socket.socket()
 irc.connect((twitch_host,twitch_port))
-
+#irc.setdefaulttimeout(1)
 irc.sendall('PASS {}\r\n'.format(t_oauth))
 irc.sendall('NICK {}\r\n'.format(t_nick))
 irc.sendall('JOIN #{}\r\n'.format(channel))
@@ -55,5 +55,6 @@ else:
                 #sleep(1.21)
                 
 print irc.recv(4096)
-
+sleep(0.5)
+k = raw_input("Press enter to exit")
 irc.close()
