@@ -1,2 +1,4 @@
 *REDACTED*
 *.pyc
+*.json
+twitch/setupbomb.py

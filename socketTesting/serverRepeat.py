@@ -2,8 +2,14 @@ from socket import *
 
 
 def listen_rewrite(sockId):
+<<<<<<< HEAD
 	for payload in sockId.makefile():
 		try:
+=======
+	while True:
+		try:
+			payload = sockId.makefile().readline()
+>>>>>>> origin/master
 			payload = payload.strip()
 
 			if payload == "QUIT":
@@ -16,7 +22,11 @@ def listen_rewrite(sockId):
 			
 			print "<-"+payload
 			payload = "SERVER * ACK " + "<" + payload + ">"
+<<<<<<< HEAD
 			print "--->"+payload[:20]
+=======
+			print "--->"+payload
+>>>>>>> origin/master
 			sockId.send(payload+"\r\n")
 
 		except Exception as e:
