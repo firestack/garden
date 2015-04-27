@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import socket
 from time import sleep
 import colorsys
@@ -7,17 +8,22 @@ import os
 
 #path.append(os.path.abspath("C:/Users/levi/Source/"))
 
-from garden.twitchtools.color import colors as color
-from garden.twitchtools import login
+from twitchtools.color import colors as color
+from twitchtools import login
 
 channel_macros = {
+    "dive":{
+        "message":u".me ก็็็็็็็็็็็็็ʕ•͡ᴥ•ʔ ก้ DIVE ก็็็็็็็็็็็็็ʕ•͡ᴥ•ʔ ก้"
+    },
     "snarfresub":{
-        "channel":"bomb_mask", 
-        "message":".me snarfHype THANK YOU FOR YOUR CONTINUED BOBO PATRONAGE!! snarfHype"
+        "channel":"snarfybobo", 
+        "message":".me snarfHype THANK YOU FOR YOUR CONTINUED BOBO PATRONAGE!! snarfHype",
+        "amount":7
         },  
     "snarfsub":{
         "channel":"snarfybobo",
-        "message":".me snarfHype snarfCat WELCOME TO THE OBOBO BROS snarfBear snarfHype"
+        "amount":7,
+        "message":".me snarfHype snarfCat WELCOME TO THE BOBOBROS snarfBear snarfHype"
     },
     "daisyhi":{
         "channel":"daisy8789",
@@ -26,8 +32,15 @@ channel_macros = {
     "ratshi":{
         "channel":"rats7eli",
         "message":".me SMASH THE SIXTY FOUR?! tloFace"
+    },
+    "snarfhype":{
+        "channel":"bomb_mask",
+        "message":u"snarfHype\u200bsnarfHype\u200bsnarfHype"
     }
 }
+
+for k,v in channel_macros.items():
+    channel_macros[k]["message"] = unicode(v["message"])
 
 def ping_return(socket_obj,print_all=False):
     print("Print all: ", print_all)
@@ -94,17 +107,17 @@ def rainbow_loop(length_mod = 1, cwPair = (None, None), wait_amount = 0.18, offs
         print "i value: ",i,"i x multiplier : ", multiplier(i)
 
         curColor, curWord = (colors[multiplier(i+offset)], words[i])
-        channelMessage = "PRIVMSG #{} :{}\r\n"
+        channelMessage = u"PRIVMSG #{} :{}\r\n"
         colorChange = channelMessage.format(channel, ".color "+curColor[0])
         wordInsert = channelMessage.format(channel, curWord)
         irc.sendall(colorChange)
                                 
-        sleep(wait_time)
+        #sleep(wait_time)
 
-        irc.sendall(wordInsert)
+        irc.sendall(wordInsert.encode('utf-8'))
         
-        sleep(wait_time)
-        print colorChange,'\n',wordInsert
+        #sleep(wait_time)
+        print colorChange,'\n',wordInsert.encode('utf-8')
 
 def rainbow_change_color(irc, time):
     channel_target = raw_input("CHANNEL TARGET : ")
@@ -137,9 +150,9 @@ def normal_operation():
     colors = color.color_hex
     colors.sort(key=lambda x: get_hsv(x[1]))
     #colors = color.color_hex
-    bomb_mask = login.Profile("bomb_mask.json")
+    bomb_mask = login.Profile("bomb_mask")
     NICKNAME = bomb_mask.name #"bomb_mask"#put your nickname here please
-    OAUTH_KEY = bomb_mask.oauth #"oauth:i9ujz4x4abcxg913m7kh36v571ak4u"#put your oauth key here please
+    OAUTH_KEY = bomb_mask.password #"oauth:i9ujz4x4abcxg913m7kh36v571ak4u"#put your oauth key here please
 
     twitch_host = "irc.twitch.tv"
     twitch_port = 6667
@@ -157,8 +170,9 @@ def normal_operation():
     irc.sendall('NICK {}\r\n'.format(NICKNAME))
     #irc.sendall('JOIN #{}\r\n'.format(channel))
 
-    rainbow_loop(15,wait_amount=0.026, irc = irc)
-    #rainbow_change_color(irc,45 )
+    rainbow_loop(7,wait_amount=0.026, irc = irc)
+    #rainbow_loop(25, wait_amount=0.015, irc = irc)
+    #rainbow_change_color(irc, 2 )
     #quoter(irc, 65, "snarfybobo")
 
     sleep(2)

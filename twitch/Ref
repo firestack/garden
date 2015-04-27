@@ -1,0 +1,30 @@
+:jtv MODE #snarfybobo +o popskyy
+:jtv MODE #snarfybobo +o eizack
+:jtv MODE #snarfybobo +o kungfufruitcup
+:jtv MODE #snarfybobo +o galley_
+:jtv MODE #snarfybobo +o xenoda
+:jtv MODE #snarfybobo +o bob_newman
+:jtv MODE #snarfybobo +o nospimi99
+:jtv MODE #snarfybobo +o gigagerson
+:jtv MODE #snarfybobo +o bomb_mask
+:jtv MODE #snarfybobo +o tww2
+:jtv MODE #snarfybobo +o snarfybobo
+
+:bomb_mask!bomb_mask@bomb_mask.tmi.twitch.tv JOIN #bomb_mask
+:bomb_mask.tmi.twitch.tv 353 bomb_mask = #bomb_mask :bomb_mask
+:bomb_mask.tmi.twitch.tv 366 bomb_mask #bomb_mask :End of /NAMES list
+
+@color=#0000FF;emotesets=0,3080,4265;subscriber=0;turbo=0;user_type= :tmi.twitch.tv USERSTATE #bomb_mask
+
+:bomb_mask.tmi.twitch.tv 353 bomb_mask = #snarfybobo :link12684 shilalydawgg trumanius brownie_marga ohyunq livand puwdiesky sonicsnes ninjitsukoala ronnidee karthack thoraisius bob_newman rnc1839 amans91 christian914 zackwebs ghezzo matomoto mrdailywyatt rieku_ we_bad sortefaar datjak23 shmarmalade xovvo omgarrett threshboop dertodselbst super1675jc nick081301 empnoel_browns_abusedwife noxere scarz02 n0cturne_ teufeljager
+
+:tmi.twitch.tv 001 bomb_mask :Welcome, GLHF!
+:tmi.twitch.tv 002 bomb_mask :Your host is tmi.twitch.tv
+:tmi.twitch.tv 003 bomb_mask :This server is rather new
+:tmi.twitch.tv 004 bomb_mask :-
+:tmi.twitch.tv 375 bomb_mask :-
+:tmi.twitch.tv 372 bomb_mask :You are in a maze of twisty passages, all alike.
+:tmi.twitch.tv 376 bomb_mask :>
+:bomb_mask!bomb_mask@bomb_mask.tmi.twitch.tv JOIN #snarfybobo
+:tmi.twitch.tv CAP * ACK :twitch.tv/tags
+:tmi.twitch.tv CAP * ACK :twitch.tv/commands

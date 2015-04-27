@@ -1,0 +1,88 @@
+:tmi.twitch.tv 001 bomb_mask :Welcome, GLHF!
+
+:tmi.twitch.tv 002 bomb_mask :Your host is tmi.twitch.tv
+
+:tmi.twitch.tv 003 bomb_mask :This server is rather new
+
+:tmi.twitch.tv 004 bomb_mask :-
+
+:tmi.twitch.tv 375 bomb_mask :-
+
+:tmi.twitch.tv 372 bomb_mask :You are in a maze of twisty passages, all alike.
+
+:tmi.twitch.tv 376 bomb_mask :>
+
+:bomb_mask!bomb_mask@bomb_mask.tmi.twitch.tv JOIN #bomb_mask
+
+:bomb_mask.tmi.twitch.tv 353 bomb_mask = #bomb_mask :bomb_mask
+
+:bomb_mask.tmi.twitch.tv 366 bomb_mask #bomb_mask :End of /NAMES list
+
+:tmi.twitch.tv CAP * ACK :twitch.tv/tags
+
+:tmi.twitch.tv CAP * ACK :twitch.tv/commands
+
+:bomb_mask!bomb_mask@bomb_mask.tmi.twitch.tv JOIN #bomb_mask
+
+:bomb_mask.tmi.twitch.tv 353 bomb_mask = #bomb_mask :bomb_mask
+
+:bomb_mask.tmi.twitch.tv 366 bomb_mask #bomb_mask :End of /NAMES list
+
+@color=#0000FF;emotesets=0,3080,4265;subscriber=0;turbo=0;user_type= :tmi.twitch.tv USERSTATE #bomb_mask
+
+@color=#0000FF;emotes=;subscriber=0;turbo=0;user_type= :bomb_mask!bomb_mask@bomb_mask.tmi.twitch.tv PRIVMSG #bomb_mask :Hell world
+
+:jtv MODE #bomb_mask +o bomb_mask
+
+@color=#0000FF;emotes=;subscriber=0;turbo=0;user_type= :bomb_mask!bomb_mask@bomb_mask.tmi.twitch.tv PRIVMSG #bomb_mask :I'm bomb
+
+@color=#0000FF;emotes=;subscriber=0;turbo=0;user_type= :bomb_mask!bomb_mask@bomb_mask.tmi.twitch.tv PRIVMSG #bomb_mask :this is salty
+
+@color=#0000FF;emotes=;subscriber=0;turbo=0;user_type= :bomb_mask!bomb_mask@bomb_mask.tmi.twitch.tv PRIVMSG #bomb_mask :!quote
+
+@color=#FF4500;emotes=;subscriber=0;turbo=0;user_type= :thesaltybot!thesaltybot@thesaltybot.tmi.twitch.tv PRIVMSG #bomb_mask :"Every time someone dies I just shake my head" -BatedUrGonnaDie 2015
+
+@color=#0000FF;emotes=;subscriber=0;turbo=0;user_type= :bomb_mask!bomb_mask@bomb_mask.tmi.twitch.tv PRIVMSG #bomb_mask :!crash
+
+@color=#0000FF;emotes=;subscriber=0;turbo=0;user_type= :bomb_mask!bomb_mask@bomb_mask.tmi.twitch.tv PRIVMSG #bomb_mask :!quote
+
+@color=#0000FF;emotes=;subscriber=0;turbo=0;user_type= :bomb_mask!bomb_mask@bomb_mask.tmi.twitch.tv PRIVMSG #bomb_mask :!quote
+
+@color=#FF4500;emotes=;subscriber=0;turbo=0;user_type= :thesaltybot!thesaltybot@thesaltybot.tmi.twitch.tv PRIVMSG #bomb_mask :<sergey-> pixaal: you wake up in the morning, open irc and someone points a gun on you telling "thank you"
+
+@color=#CD9FFE;emotes=;subscriber=0;turbo=0;user_type= :xenoda!xenoda@xenoda.tmi.twitch.tv PRIVMSG #bomb_mask :yo
+
+@color=#0000FF;emotes=;subscriber=0;turbo=0;user_type= :bomb_mask!bomb_mask@bomb_mask.tmi.twitch.tv PRIVMSG #bomb_mask :Yo thanks
+
+@color=#0000FF;emotes=;subscriber=0;turbo=0;user_type= :bomb_mask!bomb_mask@bomb_mask.tmi.twitch.tv PRIVMSG #bomb_mask :I'll tell you when it registers
+
+@color=#0000FF;emotes=;subscriber=0;turbo=0;user_type= :bomb_mask!bomb_mask@bomb_mask.tmi.twitch.tv PRIVMSG #bomb_mask :!quote
+
+@color=#FF4500;emotes=;subscriber=0;turbo=0;user_type= :thesaltybot!thesaltybot@thesaltybot.tmi.twitch.tv PRIVMSG #bomb_mask :OH SHIT BATED GOT IT WORKING
+
+@color=#0000FF;emotes=;subscriber=0;turbo=0;user_type= :bomb_mask!bomb_mask@bomb_mask.tmi.twitch.tv PRIVMSG #bomb_mask :!quote
+
+@color=#FF4500;emotes=;subscriber=0;turbo=0;user_type= :thesaltybot!thesaltybot@thesaltybot.tmi.twitch.tv PRIVMSG #bomb_mask :<sergey-> pixaal: you wake up in the morning, open irc and someone points a gun on you telling "thank you"
+
+@color=#CD9FFE;emotes=356:5-10;subscriber=0;turbo=0;user_type= :xenoda!xenoda@xenoda.tmi.twitch.tv PRIVMSG #bomb_mask :nice OpieOP
+
+@color=#0000FF;emotes=;subscriber=0;turbo=0;user_type= :bomb_mask!bomb_mask@bomb_mask.tmi.twitch.tv PRIVMSG #bomb_mask :I like that quote
+
+@color=#CD9FFE;emotes=;subscriber=0;turbo=0;user_type= :xenoda!xenoda@xenoda.tmi.twitch.tv PRIVMSG #bomb_mask :!quote
+
+@color=#FF4500;emotes=;subscriber=0;turbo=0;user_type= :thesaltybot!thesaltybot@thesaltybot.tmi.twitch.tv PRIVMSG #bomb_mask :"Every time someone dies I just shake my head" -BatedUrGonnaDie 2015
+
+@color=#CD9FFE;emotes=;subscriber=0;turbo=0;user_type= :xenoda!xenoda@xenoda.tmi.twitch.tv PRIVMSG #bomb_mask :same
+
+@color=#0000FF;emotes=;subscriber=0;turbo=0;user_type= :bomb_mask!bomb_mask@bomb_mask.tmi.twitch.tv PRIVMSG #bomb_mask :Xd
+
+@color=#0000FF;emotes=;subscriber=0;turbo=0;user_type= :bomb_mask!bomb_mask@bomb_mask.tmi.twitch.tv PRIVMSG #bomb_mask :XD*
+
+@color=#0000FF;emotes=;subscriber=0;turbo=0;user_type= :bomb_mask!bomb_mask@bomb_mask.tmi.twitch.tv PRIVMSG #bomb_mask :Alright it registered thanks
+
+:tmi.twitch.tv CLEARCHAT #bomb_mask :thesaltybot
+
+@color=#0000FF;emotes=;subscriber=0;turbo=0;user_type= :bomb_mask!bomb_mask@bomb_mask.tmi.twitch.tv PRIVMSG #bomb_mask :!quote
+
+@color=#FF4500;emotes=;subscriber=0;turbo=0;user_type=mod :thesaltybot!thesaltybot@thesaltybot.tmi.twitch.tv PRIVMSG #bomb_mask :<sergey-> pixaal: you wake up in the morning, open irc and someone points a gun on you telling "thank you"
+
