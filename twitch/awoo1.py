@@ -46,6 +46,6 @@ def sendLogger(irc , message, channel, number):
 
 while True:
     for i in range(1,6):
-        sendLogger(irc, "AWOO "*i, "waifuwednesday", i)
+        sendLogger(irc, "AWOO "*i, "codecan", i)
         time.sleep(1.6)
 

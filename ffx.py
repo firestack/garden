@@ -9,16 +9,16 @@ class ffx:
 	characters = {
 		"zanmoto":{"char": 80.0, "comp": 4},
 		"wakizashi":{"char":48.0, "comp": {"multitarget" : 3, "single": 1}}
-	}	
+	}
 	@classmethod
 	def __init__(self):
-		pass	
+		pass
 
 	@classmethod
 	def user_input(ffx):
-		ffx.gold = float(raw_input("Gold motivation :"))
-		ffx.compat = float(raw_input("Compatibility : "))
-		ffx.overdrive = str(raw_input("Overdrive? (y/n) : "))
+		ffx.gold = float(input("Gold motivation :"))
+		ffx.compat = float(input("Compatibility : "))
+		ffx.overdrive = str(input("Overdrive? (y/n) : "))
 
 		while not isinstance(ffx.overdrive, bool):
 
@@ -29,14 +29,14 @@ class ffx:
 				ffx.overdrive = False
 				break
 			else:
-				ffx.overdrive = raw_input("Please input yes or no : ")
+				ffx.overdrive = input("Please input yes or no : ")
 
-		ffx.level = int(raw_input("Level : "))
+		ffx.level = int(input("Level : "))
 
-		ffx.targetPrecent = (raw_input("Target percent?(Leave blank for 100%) : "))
+		ffx.targetPrecent = (input("Target percent?(Leave blank for 100%) : "))
 		ffx.targetPrecent = (1 if ffx.targetPrecent == "" else float(ffx.targetPrecent)/100.0)
 
-	@classmethod	
+	@classmethod
 	def calcGold(self, precent = 100):
 		overdrive_mod = (20.0 if self.overdrive else 0.0)
 		level_mod = (0.8 if self.level < 4 else 0.4)
@@ -53,7 +53,7 @@ class ffx:
 			tracker -= (self.compat / 4.0)
 
 			yield (charName, tracker)
-	
+
 	@classmethod
 	def calcPrecent(self):
 		overdrive_mod = (20.0 if self.overdrive else 0.0)
@@ -90,32 +90,32 @@ class ffx:
 def runtime():
 	ffx.user_input()
 
-	print '='*80
+	print ('='*80)
 	for name, gold in ffx.calcPrecent():
 		print ("{:0.2f}% Chance to fail! {:0.2f}% to {charName}!".format(gold, 100.0-gold, charName=name))
 		print ("{:10.0f} REQUIRED GOLD!!".format(ffx.goldToGil()))
-		
-		print '-'*80
 
-	print "_"*80
+		print ('-'*80)
+
+	print ("_"*80)
 
 	for name, gold in ffx.calcGold():
-		print name
-		print "Compatibility : ", ffx.compat
+		print (name)
+		print ("Compatibility : ", ffx.compat)
 
 		print ("{:02.1f}% chance with {} of gold motivation".format(ffx.targetPrecent*100, gold))
 
 		if gold > 112:
-			print "LARGER THEN MAX!! More then {:13.0f} gil requred".format(ffx.goldToGil(112))
+			print ("LARGER THEN MAX!! More then {:13.0f} gil requred".format(ffx.goldToGil(112)))
 
 		print ("{:20.2f} REQUIRED GOLD!!\n".format(ffx.goldToGil(gold)))
 
-		print '-'*80
+		print ('-'*80)
 
-	print "="*80
-	print
-	print
-		
+	print ("="*80)
+	print()
+	print()
+
 
 
 
