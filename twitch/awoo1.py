@@ -44,8 +44,8 @@ def sendLogger(irc , message, channel, number):
     #print "\rNumber of messages sent: {}; Number of emotes sent: {} ".format(sendLogger.number, sendLogger.emotes),
     printAt("Nmb of msg: {}; Nmb of emote: {}".format(sendLogger.number, sendLogger.emotes), 5)
 
-while True:
+for k in range(0,3):
     for i in range(1,6):
-        sendLogger(irc, "no1HYPE "*i, "bomb_mask", i)
-        time.sleep(0.05)
+        sendLogger(irc, "no1PLS "*i, "theno1alex", i)
+        #time.sleep(0.05)
 

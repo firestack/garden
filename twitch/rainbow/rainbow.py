@@ -31,7 +31,7 @@ ENSURE_WEB_SAFE = False
 macros = {
     "dive":{
         "message":u"ก็็็็็็็็็็็็็ʕ•͡ᴥ•ʔ ก้ DIVE ก็็็็็็็็็็็็็ʕ•͡ᴥ•ʔ ก้",
-        "amount":30
+        "amount":10
     },
     "rainbow":{
         "message":u"LOOK AT ALL THE RAINBOW",
@@ -83,7 +83,7 @@ macros = {
 
 def get_hsv(hexrgb):
     hexrgb = hexrgb.lstrip("#")   # in case you have Web color specs
-    r, g, b = (int(hexrgb[i:i+2], 16) / 255.0 for i in xrange(0,5,2))
+    r, g, b = (int(hexrgb[i:i+2], 16) / 255.0 for i in range(0,5,2))
     return colorsys.rgb_to_hsv(r, g, b)
 
 if __name__ == '__main__':
@@ -186,7 +186,7 @@ if __name__ == '__main__':
                 if not IS_MOD:
                     time.sleep(1.6 / 2.0)
                 else:
-                    #time.sleep(0.01)
+                    time.sleep(0.08)
                     pass
 
             twitch.read()

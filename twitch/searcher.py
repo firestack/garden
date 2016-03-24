@@ -7,7 +7,7 @@ import time
 
 ################################################################
 # Python twitch chat searcher
-# Copyright Mike Firestack 2015
+# Copyright Firestack 2015
 ################################################################
 PROCESS_COUNT = 8
 MAX_ITER = 10
