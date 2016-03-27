@@ -37,7 +37,7 @@ class ChemBaseObject(object):
     pass
     
 # Interfaces
-class UnitInterface():
+class UnitInterface:
     unit = ""
 
     def ratio(self):
