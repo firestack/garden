@@ -175,7 +175,7 @@ class Moles(UnitInterface, ChemBaseObject):
         if NewAmount == None:
             return Grams(self.element, self.element.GetMass().amount * self.amount)
         else:
-            return Grams(self.element, self.element.GetMass().amount * NewAmount)
+            return Grams(self.element, NewAmount)
             
     def ToParticles(self, NewAmount = None):
         if NewAmount == None:
@@ -192,4 +192,4 @@ class Particles(UnitInterface, ChemBaseObject):
         if NewAmount == None:
             return Moles(self.element, self.amount / mol)
         else:
-            return Moles(self.element, NewAmount / mol)
+            return Moles(self.element, NewAmount)
