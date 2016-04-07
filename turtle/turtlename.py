@@ -104,7 +104,7 @@ try:
 	sentenceWrite(raw_input("String: "), (-600, -150))
 except:
 	pass
-sentenceWrite("Hello Mr. heldman my name is mike firestack.", (-600, 0))
+
 sentenceWrite("0123456789.",(-600, -50))
 sentenceWrite("The quick brown fox jumped over the lazy dog.",(-600, -100))
 
